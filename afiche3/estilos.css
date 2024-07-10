@@ -1,0 +1,91 @@
+/*tipografía*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700;900&display=swap');
+
+@font-face {
+  font-family: 'flexslider-icon';
+  src: url('fonts/flexslider-icon.eot');
+  src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') 
+  format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?sufeqq');
+  src:  url('fonts/icomoon.eot?sufeqq#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?sufeqq') format('truetype'),
+    url('fonts/icomoon.woff?sufeqq') format('woff'),
+    url('fonts/icomoon.svg?sufeqq#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #06bd9e;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+    text-align: center;
+}
+
+section {
+    background: rgb(255, 255, 255);
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    section {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
