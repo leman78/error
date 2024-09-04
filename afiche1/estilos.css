@@ -24,7 +24,7 @@ body, html {
 .text-gallery {
     width: 90%;
     max-width: 90%; /* Más ancho en pantallas grandes */
-    height: 70vh; /* Altura significativa para más espacio de texto */
+    height: 40vh; /* Altura significativa para más espacio de texto */
     max-height: 90vh; /* Máxima altura en pantallas grandes */
     text-align: center;
     color: white;
