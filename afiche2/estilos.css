@@ -1,91 +1,87 @@
-/*tipografía*/
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700;900&display=swap');
-
-@font-face {
-  font-family: 'flexslider-icon';
-  src: url('fonts/flexslider-icon.eot');
-  src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') 
-  format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?sufeqq');
-  src:  url('fonts/icomoon.eot?sufeqq#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?sufeqq') format('truetype'),
-    url('fonts/icomoon.woff?sufeqq') format('woff'),
-    url('fonts/icomoon.svg?sufeqq#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon' !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Estilos básicos */
-body {
-    font-family: Arial, sans-serif;
+/* Reset de estilos */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.background {
+    background-image: url('afiche2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background-color: #d4cfb9;
+    padding: 20px;
 }
 
-header {
-    background-color: #d9ff00;
-    color: rgb(0, 0, 0);
-    width: 100%;
-    padding: 1rem;
+.text-gallery {
+    width: 90%;
+    max-width: 90%; /* Más ancho en pantallas grandes */
+    height: 70vh; /* Altura significativa para más espacio de texto */
+    max-height: 90vh; /* Máxima altura en pantallas grandes */
     text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para mayor legibilidad */
+    padding: 40px; /* Aumenta el padding para mayor espacio */
+    border-radius: 10px;
+    position: relative; /* Necesario para la posición absoluta de las frases */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño */
 }
 
-main {
-    padding: 1rem;
-    text-align: center;
+.text-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 1; /* Se asegura de que todas las frases tengan el mismo nivel */
+    animation: fadeInOut 15s infinite; /* Duración total del ciclo de animación */
+    padding: 0 20px; /* Padding para que el texto no se pegue a los bordes */
+    width: 100%; /* Asegura que el texto se ajuste dentro del contenedor */
+    box-sizing: border-box; /* Para que el padding no afecte el tamaño del ancho */
+    font-size: 1.8rem; /* Tamaño de fuente ajustable */
+    line-height: 1.6; /* Mejora la legibilidad */
 }
 
-section {
-    background: rgb(255, 255, 255);
-    padding: 2rem;
-    margin: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Animación de opacidad para cada frase */
+@keyframes fadeInOut {
+    0%, 25%, 100% { opacity: 0; z-index: 1; } /* Las frases comienzan y terminan siendo invisibles */
+    5%, 20% { opacity: 1; z-index: 2; } /* Solo la frase visible está en el frente */
 }
 
-/* Estilos responsivos */
+/* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
-    section {
-        padding: 1rem;
-        margin: 0.5rem;
+    .text-gallery {
+        width: 100%;
+        height: 65vh; /* Mayor altura en pantallas medianas */
+        padding: 30px; /* Ajusta el padding en móviles */
+        font-size: 1.6rem; /* Tamaño de fuente ligeramente más pequeño en móviles */
+    }
+    .text-slide {
+        font-size: 1.6rem; /* Ajuste del tamaño de fuente en móviles */
+        line-height: 1.4; /* Mejora la legibilidad */
+        padding: 0 15px; /* Reduce el padding en móviles */
+        margin-top: 2em;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        font-size: 1.2rem;
+    .text-gallery {
+        padding: 20px; /* Aún más ajuste en dispositivos muy pequeños */
+        height: 65vh; /* Mayor altura en pantallas pequeñas */
+        font-size: 1.4rem; /* Ajuste de tamaño de fuente para dispositivos más pequeños */
     }
-
-    section {
-        padding: 0.5rem;
-        margin: 0.5rem;
-    }
-
-    p {
-        font-size: 0.9rem;
+    .text-slide {
+        font-size: 1.4rem; /* Ajuste adicional para pantallas más pequeñas */
+        padding: 0 10px; /* Padding más pequeño */
+        margin-top: 2em;
     }
 }
